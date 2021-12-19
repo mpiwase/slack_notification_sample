@@ -9,7 +9,7 @@ class SampleTest extends TestCase
     /**
      * @covers ::gcd
      */
-    function testGcd()
+    public function testGcd()
     {
         self::assertThat(gcd(10, 2), self::equalTo(2));
         self::assertThat(gcd(19472620, 19105), self::equalTo(5));
@@ -23,7 +23,7 @@ class SampleTest extends TestCase
     /**
      * @covers ::lcm
      */
-    function testLcm()
+    public function testLcm()
     {
         self::assertThat(lcm(1, 2), self::equalTo(2));
         self::assertThat(lcm(7, 1), self::equalTo(7));
