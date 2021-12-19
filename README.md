@@ -1,0 +1,2 @@
+# slack_notification_sample
+Github Actionsからslack送信サンプル
