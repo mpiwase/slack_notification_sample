@@ -17,3 +17,14 @@ function gcd(int $a, int $b): int
         $b = $r;
     }
 }
+
+/**
+ * 最小公倍数を求める
+ * @param int $a
+ * @param int $b
+ * @return float|int
+ */
+function lcm(int $a, int $b)
+{
+    return $a / gcd($a, $b) * $b;
+}
