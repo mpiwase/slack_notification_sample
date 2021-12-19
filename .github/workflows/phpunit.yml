@@ -10,6 +10,7 @@ on:
 env:
   NODE_VERSION: '16.x'
   PHP_VERSION: '7.4'
+  SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
 
 jobs:
   CI:
@@ -41,3 +42,21 @@ jobs:
       - name: phpunit
         shell: bash
         run: php ./vendor/bin/phpunit
+
+      #-- Slack通知 --#
+      # 成功
+      - name: succeeded phpunit
+        if: ${{ success() }}
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_TITLE: ':sunny: succeeded phpunit'
+          SLACK_COLOR: ${{ job.status }}
+          MSG_MINIMAL: event,ref
+
+      # 失敗
+      - name: failed to phpunit
+        if: ${{ failure() }}
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_TITLE: ':umbrella_with_rain_drops: failed to phpunit'
+          SLACK_COLOR: ${{ job.status }}
