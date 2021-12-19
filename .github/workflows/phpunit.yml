@@ -51,7 +51,8 @@ jobs:
         env:
           SLACK_TITLE: ':sunny: succeeded phpunit'
           SLACK_COLOR: ${{ job.status }}
-          MSG_MINIMAL: event,ref
+          MSG_MINIMAL: Actions URL,Commit
+          SLACK_ICON: https://www.masterpiece.co.jp/wp-content/themes/mp/img/mp_logo.png
 
       # 失敗
       - name: failed to phpunit
@@ -60,3 +61,4 @@ jobs:
         env:
           SLACK_TITLE: ':umbrella_with_rain_drops: failed to phpunit'
           SLACK_COLOR: ${{ job.status }}
+          SLACK_ICON: https://www.masterpiece.co.jp/wp-content/themes/mp/img/mp_logo.png
