@@ -1,0 +1,17 @@
+{
+    "name": "iwase/slack_notification_sample",
+    "authors": [
+        {
+            "name": "IWASE Shigeaki",
+            "email": "iwase@masterpiece.co.jp"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "scripts": {
+        "phpunit": [
+            "./vendor/bin/phpunit"
+        ]
+    }
+}
