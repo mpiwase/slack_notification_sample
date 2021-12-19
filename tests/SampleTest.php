@@ -32,4 +32,12 @@ class SampleTest extends TestCase
         self::assertThat(lcm(17386, 17386), self::equalTo(17386));
         self::assertThat(lcm(111, 157), self::equalTo(111 * 157));
     }
+
+    /**
+     * @covers ::lcm
+     */
+    public function testLcm_失敗させる()
+    {
+        self::assertThat(lcm(1, 2), self::equalTo(1));
+    }
 }
